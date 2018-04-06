@@ -1,0 +1,11 @@
+// Navbar
+
+nav {
+  transition: all 0.3s ease-out;
+}
+nav:not(.sticky) {
+  padding: 2rem 1rem;
+}
+nav.sticky {
+  background-color: $primary;
+}

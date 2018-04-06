@@ -5,10 +5,10 @@
       class="bg-dark text-white home-banner">
       <div class="container hero-container">
         <div class="hero-content">
-          <h1 class="cd-headline letters type">Hi, I'm Tharindu. I design & build</h1>
+          <h1 class="mb-4">Hi, I'm Tharindu. I design & build</h1>
           <a
             href="#sub-footer"
-            class="btn btn-primary btn-lg">Yes, I'm Available For Hire</a>
+            class="btn btn-outline-primary btn-lg">Yes, I'm Available For Hire</a>
           <div class="learn-more"><a href="#">Learn more about what I do<br><i class="fa fa-chevron-down"/></a></div>
         </div>
       </div>

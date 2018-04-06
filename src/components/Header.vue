@@ -1,9 +1,9 @@
 <template>
   <b-navbar
-    toggleable="md"
-    type="dark"
+    v-scroll-class:sticky="100"
     fixed="top"
-    variant="transparent">
+    toggleable="md"
+    type="dark">
 
     <div class="container">
       <b-navbar-toggle target="nav_collapse"/>
