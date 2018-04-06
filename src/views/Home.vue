@@ -5,7 +5,8 @@
       class="bg-dark text-white home-banner">
       <div class="container hero-container">
         <div class="hero-content">
-          <h1 class="mb-4">Hi, I'm Tharindu. I design & build</h1>
+          <h1 class="mb-2">Hi, I'm Tharindu. I design & build</h1>
+          <h1 class="element mb-4"><vue-typer :text="intro"/></h1>
           <a
             href="#sub-footer"
             class="btn btn-outline-primary btn-lg">Yes, I'm Available For Hire</a>
@@ -17,7 +18,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      intro: [
+        "Arya Stark",
+        "Jon Snow",
+        "Daenerys Targaryen",
+        "Melisandre",
+        "Tyrion Lannister"
+      ]
+    };
+  }
+};
 </script>
 
 <style scoped lang="scss">

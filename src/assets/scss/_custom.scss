@@ -9,3 +9,18 @@ nav:not(.sticky) {
 nav.sticky {
   background-color: $primary;
 }
+
+// Vue Typer (https://github.com/cngu/vue-typer)
+
+.vue-typer {
+  .custom.char {
+
+    color: inherit;
+    &.selected {
+      //background-color: greenyellow;
+    }
+  }
+  .custom.caret {
+    background-color: white;
+  }
+}

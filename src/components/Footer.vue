@@ -5,21 +5,21 @@
         <div class="col text-center">
           <p>Handmade by me © {{ new Date().getFullYear() }}.</p>
           <div class="social-links">
-            <a 
-              href="" 
-              target="_blank"><i class="fa fa-facebook"/></a>
-            <a 
-              href="" 
-              target="_blank"><i class="fa fa-twitter"/></a>
-            <a 
-              href="" 
-              target="_blank"><i class="fa fa-linkedin"/></a>
-            <a 
-              href="" 
-              target="_blank"><i class="fa fa-google-plus"/></a>
-            <a 
-              href="" 
+            <a
+              href=""
               target="_blank"><i class="fa fa-github"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-twitter"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-linkedin"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-google-plus"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-stack-overflow"/></a>
           </div>
         </div>
       </div>
