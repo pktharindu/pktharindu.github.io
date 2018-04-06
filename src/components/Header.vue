@@ -1,9 +1,10 @@
 <template>
   <b-navbar
     v-scroll-class:sticky="100"
-    fixed="top"
+    sticky="top"
     toggleable="md"
-    type="dark">
+    type="dark"
+    class="bg-dark">
 
     <div class="container">
       <b-navbar-toggle target="nav_collapse"/>
@@ -33,11 +34,3 @@
     </div>
   </b-navbar>
 </template>
-
-<script>
-export default {};
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-</style>

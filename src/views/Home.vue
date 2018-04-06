@@ -5,107 +5,36 @@
       class="bg-dark text-white home-banner">
       <div class="container hero-container">
         <div class="hero-content">
-          <h1 class="mb-2">Hi, I'm Tharindu. I design & build</h1>
-          <h1 class="element mb-4"><vue-typer :text="intro"/></h1>
-          <a
-            href="#sub-footer"
-            class="btn btn-outline-primary btn-lg">Yes, I'm Available For Hire</a>
-          <div class="learn-more"><a href="#">Learn more about what I do<br><i class="fa fa-chevron-down"/></a></div>
+          <p class="tags top-tags"> &nbsp;&nbsp;&nbsp;&lt;body&gt;</p>
+          <h1 class="mb-md-5 mb-4 text-center">
+            <span>Hi, I'm Tharindu. I design & build</span><br>
+            <span class="element"><vue-typer :text="intro"/></span>
+          </h1>
+          <p class="text-center"><a
+            href="#"
+            class="btn btn-outline-primary btn-lg mb-2">Yes, I'm Available For Hire</a></p>
+          <p class="tags bottom-tags"> &nbsp;&nbsp;&nbsp;&lt;/body&gt;<br> &lt;/html&gt; </p>
+          <div class="learn-more text-center"><a href="#">Learn more about what I do<br><i class="fa fa-chevron-down"/></a></div>
         </div>
       </div>
     </div>
+
+    <nav-bar/> <!--Navbar component-->
+
+    
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
 export default {
+  components: {
+    "nav-bar": Header
+  },
   data() {
     return {
-      intro: [
-        "Arya Stark",
-        "Jon Snow",
-        "Daenerys Targaryen",
-        "Melisandre",
-        "Tyrion Lannister"
-      ]
+      intro: ["corporate websites.", "web applications.", "landing pages."]
     };
   }
 };
 </script>
-
-<style scoped lang="scss">
-#fullscreen-banner {
-  height: 100vh;
-  position: relative;
-  width: 100%;
-  min-height: 350px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#fullscreen-banner:before,
-#fullscreen-banner:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.home-banner:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(49, 61, 65, 0.6)),
-    to(rgba(49, 61, 65, 0.6))
-  );
-  background-image: linear-gradient(
-    90deg,
-    rgba(49, 61, 65, 0.6),
-    rgba(49, 61, 65, 0.6)
-  );
-}
-.hero-container {
-  display: table;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 100%;
-}
-.hero-content {
-  display: table-cell;
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  vertical-align: middle;
-}
-.learn-more {
-  bottom: 2.5%;
-  display: inline-block;
-  left: 50%;
-  padding: 20px;
-  position: absolute;
-  white-space: nowrap;
-  z-index: 2;
-  -webkit-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-@media screen and (min-width: 550px) {
-  .home-banner {
-    background-image: url(../assets/images/hero-bg.jpg);
-  }
-}
-</style>
