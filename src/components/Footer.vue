@@ -7,16 +7,25 @@
           <div class="social-links">
             <a
               href=""
-              target="_blank"><i class="fa fa-github"/></a>
+              target="_blank"><i class="fa fa-twitter"/></a>
             <a
               href=""
-              target="_blank"><i class="fa fa-twitter"/></a>
+              target="_blank"><i class="fa fa-instagram"/></a>
             <a
               href=""
               target="_blank"><i class="fa fa-linkedin"/></a>
             <a
               href=""
-              target="_blank"><i class="fa fa-google-plus"/></a>
+              target="_blank"><i class="fa fa-skype"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-facebook"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-dribbble"/></a>
+            <a
+              href=""
+              target="_blank"><i class="fa fa-github"/></a>
             <a
               href=""
               target="_blank"><i class="fa fa-stack-overflow"/></a>

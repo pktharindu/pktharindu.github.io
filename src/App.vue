@@ -31,23 +31,69 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
 }
+.rock-salt {
+  font-family: "Rock Salt", cursive;
+}
+
+.btn {
+  flex: 1 1 auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  border-radius: 5em;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: 0.5s;
+  background-size: 200% auto;
+  padding: 0.6rem 1.4rem;
+  &:hover {
+    padding: 0.6rem 1.7rem;
+  }
+}
+.btn-grad {
+  border: 0;
+  color: white;
+  background-image: linear-gradient(
+    to right,
+    #29c5fd 0%,
+    $primary 51%,
+    #29c5fd 100%
+  );
+  &.btn-grad:hover {
+    color: white;
+    background-position: right center;
+  }
+}
+.btn-lg {
+  font-size: 0.9rem;
+  padding: 0.9rem 1.5rem;
+  &:hover {
+    padding: 0.9rem 2rem;
+  }
+}
 .tags {
   font-family: "La Belle Aurore", cursive;
+  &.top-tags {
+    position: absolute;
+    top: 8%;
+  }
+  &.bottom-tags {
+    position: absolute;
+    bottom: 15%;
+  }
 }
-.tags.top-tags {
-  position: absolute;
-  top: 8%;
+::-moz-selection {
+  background: $primary;
 }
-.tags.bottom-tags {
-  position: absolute;
-  bottom: 15%;
+
+::selection {
+  background: $primary;
 }
 // Vue Typer (https://github.com/cngu/vue-typer)
 .vue-typer {
   .custom.char {
     color: inherit;
     &.selected {
-      //background-color: greenyellow;
+      background-color: #3ad8b4;
     }
   }
   .custom.caret {
@@ -59,12 +105,7 @@ h6 {
 }
 @include media-breakpoint-up(md) {
   .hero-content h1 {
-    font-size: 2.2rem;
-  }
-}
-@include media-breakpoint-up(lg) {
-  .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 #fullscreen-banner {
@@ -137,6 +178,17 @@ h6 {
 @include media-breakpoint-up(sm) {
   .home-banner {
     background-image: url(./assets/images/hero-bg.jpg);
+    background-attachment: fixed;
+  }
+}
+.profile-container {
+  img.profile {
+    width: 100%;
+    max-width: 200px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   }
 }
 </style>
