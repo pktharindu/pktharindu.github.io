@@ -1,6 +1,5 @@
 <template>
   <b-navbar
-    v-scroll-class:sticky="100"
     sticky
     toggleable="md"
     type="dark"

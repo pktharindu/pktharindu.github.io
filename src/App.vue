@@ -19,7 +19,7 @@ export default {
 @import "./assets/scss/app";
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Varela Round", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +34,9 @@ h6 {
 .rock-salt {
   font-family: "Rock Salt", cursive;
 }
-
+.statement {
+  font-size: 1.3rem;
+}
 .btn {
   flex: 1 1 auto;
   font-family: "Montserrat", sans-serif;
@@ -68,6 +70,15 @@ h6 {
   padding: 0.9rem 1.5rem;
   &:hover {
     padding: 0.9rem 2rem;
+  }
+}
+hr {
+  border-top-width: 3px;
+  &.short {
+    max-width: 100px;
+  }
+  &.primary {
+    border-color: $primary;
   }
 }
 .tags {

@@ -14,15 +14,56 @@
             href="#"
             class="btn btn-lg btn-grad mb-3">Yes, I'm Available For Hire</a></p>
           <p class="tags bottom-tags"> &nbsp;&nbsp;&nbsp;&lt;/body&gt;<br> &lt;/html&gt; </p>
-          <div class="learn-more text-center"><a href="#">Learn more about what I do<br><i class="fa fa-chevron-down"/></a></div>
+          <div class="learn-more text-center"><a
+            v-scroll-to="'#services'"
+            href="#services">Learn More<br><i class="fa fa-chevron-down"/></a></div>
         </div>
       </div>
     </div>
 
-    <!--<nav-bar/>--> <!--Navbar component-->
+    <!--Services Section-->
+    <div
+      id="services"
+      class="my-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <h3 class="mt-4">My Expertise</h3>
+            <hr class="short primary">
+            <p class="statement mb-5">I've got chops in all phases of the design process.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="expertise-block">
+              <i class="fa fa-map-o fa-3x text-primary mb-4"/>
+              <h4 class="mb-3">Strategy</h4>
+              <p class="summary">I collaborate with clients and peers to nurture and transform ideas into well thought out design specs. After all, that's where the majority of amazing user experiences start.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="expertise-block">
+              <i class="fa fa-magic fa-3x text-primary mb-4"/>
+              <h4 class="mb-3">UX/UI</h4>
+              <p class="summary">I sketch and wireframe interfaces focusing on content structure, intuitive UI patterns and simple interactions. I'm a minimalist who truly believes that less is more.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="expertise-block">
+              <i class="fa fa-code fa-3x text-primary mb-4"/>
+              <h4 class="mb-3">Code</h4>
+              <p class="summary">I design in the browser with HTML(5), CSS(3) and a touch of JavaScript. I love coding things from scratch, but I can work with front-end frameworks like Bootstrap too.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="bg-dark text-light pt-5">
-      <div class="container">
+    <!--About Me Section-->
+    <div
+      id="about"
+      class="bg-dark text-light py-5">
+      <div class="container mt-4">
         <div class="row">
           <div class="col-md-3 mb-4">
             <div class="text-center profile-container">
@@ -48,14 +89,14 @@
               do that using design and code.</p>
               <p>My skills are broad: from UX to design, front end to back end development. I enjoy each aspect, and
               love building sites from start to finish, for clients all over the world.</p>
-              <p>Have a project you'd like to discuss? <a href="#">Get in touch!</a></p>
+              <p class="mb-2">Have a project you'd like to discuss? <a href="#">Get in touch!</a></p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <h3>What I do</h3>
             <dl>
               <dt>Front-end</dt>
-              <dd>HTML5, CSS3, SCSS, Bootstrap, Javascript, ES6, VueJS, jQuery</dd>
+              <dd>HTML5, CSS3, SCSS, Bootstrap, Javascript (ES5,ES6), Vue.js, jQuery</dd>
               <dt>Back-end</dt>
               <dd>PHP, Laravel, APIs, Devops, NoSQL</dd>
               <dt>CMS</dt>
@@ -69,15 +110,29 @@
         </div>
       </div>
     </div>
+
+    <!--Contact Section-->
+    <div
+      id="contact"
+      class="bg-primary py-4">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col col-md-8 mx-auto text-center">
+            <h3>Want to work together?</h3>
+            <hr class="short">
+            <p class="statement">I'm currently accepting new projects and would love to hear about yours. Please take a few minutes to tell me about it.</p>
+            <a
+              href="#"
+              class="btn btn-lg btn-outline-dark">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
 export default {
-  components: {
-    "nav-bar": Header
-  },
   data() {
     return {
       intro: ["corporate websites.", "web applications.", "landing pages."]
