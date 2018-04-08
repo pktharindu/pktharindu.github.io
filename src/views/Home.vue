@@ -21,14 +21,16 @@
       </div>
     </div>
 
+    <app-header/>
+
     <!--Services Section-->
     <div
       id="services"
-      class="my-5">
+      class="py-5">
       <div class="container text-center">
         <div class="row">
           <div class="col">
-            <h3 class="mt-4">My Expertise</h3>
+            <h3 class="mt-4">My Services</h3>
             <hr class="short primary">
             <p class="statement mb-5">I've got chops in all phases of the design process.</p>
           </div>
@@ -87,9 +89,9 @@
               <p>From the initial conversation to the day of launch, there’s one thing I’m trying to do, grow your
               business. My speciality is helping small to medium-sized businesses get more customers online, which I
               do that using design and code.</p>
-              <p>My skills are broad: from UX to design, front end to back end development. I enjoy each aspect, and
+              <p>My skills are broad: from UX to design, front-end to back-end development. I enjoy each aspect and
               love building sites from start to finish, for clients all over the world.</p>
-              <p class="mb-2">Have a project you'd like to discuss? <a href="#">Get in touch!</a></p>
+              <p class="mb-2">Have a project you'd like to discuss? <a href="#">Contact Me!</a></p>
             </div>
           </div>
           <div class="col-md-4 mb-4">
@@ -118,12 +120,12 @@
       <div class="container py-5">
         <div class="row">
           <div class="col col-md-8 mx-auto text-center">
-            <h3>Want to work together?</h3>
-            <hr class="short">
+            <h3>Get in Touch!</h3>
+            <hr class="short dark">
             <p class="statement">I'm currently accepting new projects and would love to hear about yours. Please take a few minutes to tell me about it.</p>
             <a
               href="#"
-              class="btn btn-lg btn-outline-dark">Get Started</a>
+              class="btn btn-lg btn-outline-dark">Contact Me</a>
           </div>
         </div>
       </div>
@@ -132,7 +134,12 @@
 </template>
 
 <script>
+import Header from "@/components/Header.vue";
+
 export default {
+  components: {
+    "app-header": Header
+  },
   data() {
     return {
       intro: ["corporate websites.", "web applications.", "landing pages."]

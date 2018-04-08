@@ -37,48 +37,67 @@ h6 {
 .statement {
   font-size: 1.3rem;
 }
+.navbar {
+  .nav-link {
+    padding: 1.4rem 0;
+    margin-left: 1rem;
+    margin-bottom: -2px;
+    &.active {
+      border-bottom: 3px solid $primary;
+    }
+  }
+}
+.nav-grad {
+  background-color: rgba(255, 255, 255, 0.9);
+}
 .btn {
   flex: 1 1 auto;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
   border-radius: 5em;
   text-transform: uppercase;
-  -webkit-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s linear;
   transition: 0.5s;
   background-size: 200% auto;
   padding: 0.6rem 1.4rem;
   &:hover {
     padding: 0.6rem 1.7rem;
   }
-}
-.btn-grad {
-  border: 0;
-  color: white;
-  background-image: linear-gradient(
-    to right,
-    #29c5fd 0%,
-    $primary 51%,
-    #29c5fd 100%
-  );
-  &.btn-grad:hover {
-    color: white;
-    background-position: right center;
+  &[class*="btn-outline"] {
+    border-width: 2px;
   }
-}
-.btn-lg {
-  font-size: 0.9rem;
-  padding: 0.9rem 1.5rem;
-  &:hover {
-    padding: 0.9rem 2rem;
+  &.btn-grad {
+    border: 0;
+    color: white;
+    background-image: linear-gradient(
+      to right,
+      #29c5fd 0%,
+      $primary 51%,
+      #29c5fd 100%
+    );
+    &.btn-grad:hover {
+      color: white;
+      background-position: right center;
+    }
+  }
+  &.btn-lg {
+    font-size: 0.9rem;
+    padding: 0.9rem 1.5rem;
+    &:hover {
+      padding: 0.9rem 2rem;
+    }
   }
 }
 hr {
   border-top-width: 3px;
   &.short {
-    max-width: 100px;
+    max-width: 80px;
   }
   &.primary {
     border-color: $primary;
+  }
+  &.dark {
+    border-color: $body-color;
   }
 }
 .tags {
@@ -104,7 +123,7 @@ hr {
   .custom.char {
     color: inherit;
     &.selected {
-      background-color: #3ad8b4;
+      background-color: #3bd3a9;
     }
   }
   .custom.caret {
@@ -188,7 +207,7 @@ hr {
 }
 @include media-breakpoint-up(sm) {
   .home-banner {
-    background-image: url(./assets/images/hero-bg.jpg);
+    background-image: url(./assets/images/main-bg.jpg);
     background-attachment: fixed;
   }
 }
