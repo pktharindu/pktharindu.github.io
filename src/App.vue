@@ -114,7 +114,6 @@ hr {
 ::-moz-selection {
   background: $primary;
 }
-
 ::selection {
   background: $primary;
 }
