@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
+    <home/>
     <app-footer/>
   </div>
 </template>
 
 <script>
+import Home from "@/views/Home.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
+    Home,
     "app-footer": Footer
   }
 };

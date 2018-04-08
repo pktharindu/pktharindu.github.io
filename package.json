@@ -5,16 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build && vcg --branch=master"
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.6",
     "font-awesome": "^4.7.0",
     "vue": "^2.5.13",
-    "vue-router": "^3.0.1",
     "vue-scrollto": "^2.11.0",
-    "vue-typer": "^1.2.0",
-    "vuex": "^3.0.1"
+    "vue-typer": "^1.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
