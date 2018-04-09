@@ -74,27 +74,24 @@
                 src="@/assets/images/profile.jpg"
                 alt="Picture of Tharindu">
               <h5 class="mb-3">Designer + Developer</h5>
-              <h3 class="rock-salt">Web Expert</h3>
+              <h3 class="rock-salt">Web Wizard</h3>
             </div>
           </div>
-          <div class="col-md-5 mb-4">
+          <div class="col mb-4">
             <h3>About Me</h3>
             <div class="text-justify">
-              <p>After graduating in 2018 with a Bachelor’s Degree (First Class Honours) in Software Engineering from
-              the Open University of Sri Lanka, I focused my professional career almost exclusively on web
-              development.</p>
-              <p>I’ve been building websites for over {{ new Date().getFullYear() - 2013 }} years working both as a
-              freelance web designer and developer and as part of a team in various companies across Sri Lanka.</p>
-              <p>You might call me a freelancer, but I prefer the title of consultant. A freelancer is someone you contract to design and code a website, I do a lot more than that.</p>
-              <p>From the initial conversation to the day of launch, there’s one thing I’m trying to do, grow your
-              business. My speciality is helping small to medium-sized businesses get more customers online, which I
-              do that using design and code.</p>
-              <p>My skills are broad: from UX to design, front-end to back-end development. I enjoy each aspect and
-              love building sites from start to finish, for clients all over the world.</p>
+              <p>Hi, I'm Tharindu and I'm a “Design-geneer”: That means I design and code. I started out my career doing traditional print design but quickly fell in love with the web.</p>
+              <p>After graduating from <a
+                href="http://www.ou.ac.lk"
+                target="_blank">The Open University of Sri Lanka</a> with a Bachelor’s Degree (First Class Honours) in Software Engineering, I focused my professional career almost exclusively on web development.</p>
+              <p>I’ve been building websites for over {{ new Date().getFullYear() - 2013 }} years working both as a freelance web designer and developer and as part of a team in various companies across the globe.</p>
+              <p>My skills are broad: from UX to design, front-end to back-end development. I enjoy each aspect and love building sites from start to finish, for clients all over the world.</p>
+              <p>UX and problem solving are central to everything I do. I care deeply about creating world-class, useful and beautiful products that help people and make a difference. I am very passionate about Web Development and strive to better myself as a developer, and the development community as a whole.</p>
+              <p>Whether you're a startup looking for help with your app, a non-profit that wants to make an impact with your website, or a small business that needs a full branding makeover, I would love to help you find the right solution that changes your game.</p>
               <p class="mb-2">Have a project you'd like to discuss? <a href="#">Contact Me!</a></p>
             </div>
           </div>
-          <div class="col-md-4 mb-4">
+          <div class="col-md-3 mb-4">
             <h3>What I do</h3>
             <dl>
               <dt>Front-end</dt>
