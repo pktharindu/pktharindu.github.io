@@ -3,7 +3,7 @@
     sticky
     toggleable="md"
     type="light"
-    class="nav-grad py-0">
+    class="nav-grad py-md-0">
     <div class="container">
       <b-navbar-toggle target="nav_collapse"/>
       <b-collapse

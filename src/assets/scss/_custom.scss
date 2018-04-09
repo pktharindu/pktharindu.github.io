@@ -4,6 +4,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 h1,
 h2,
 h3,
@@ -12,12 +13,15 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
 }
+
 .rock-salt {
   font-family: "Rock Salt", cursive;
 }
+
 .statement {
   font-size: 1.3rem;
 }
+
 .btn {
   flex: 1 1 auto;
   font-family: "Montserrat", sans-serif;
@@ -56,6 +60,7 @@ h6 {
     }
   }
 }
+
 hr {
   border-top-width: 3px;
   &.short {
@@ -68,9 +73,11 @@ hr {
     border-color: $body-color;
   }
 }
+
 ::-moz-selection {
   background: $primary;
 }
+
 ::selection {
   background: $primary;
 }
@@ -87,19 +94,23 @@ hr {
     background-color: white;
   }
 }
+
 .hero-content h1 {
   font-size: 1.5rem;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
 }
+
 @include media-breakpoint-up(md) {
   .hero-content h1 {
     font-size: 2.5rem;
   }
 }
+
 #fullscreen-banner {
   height: 100vh;
   position: relative;
   width: 100%;
-  min-height: 350px;
+  min-height: 450px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -110,7 +121,12 @@ hr {
     bottom: 0;
     width: 100%;
   }
+  .logo {
+    -webkit-filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.5));
+  }
 }
+
 .home-banner:before {
   content: "";
   display: block;
@@ -133,18 +149,21 @@ hr {
       rgba(49, 61, 65, 0.6)
   );
 }
+
 .hero-container {
   display: table;
   margin: 0 auto;
   padding: 0 20px;
   height: 100%;
 }
+
 .hero-content {
   display: table-cell;
   position: relative;
   z-index: 10;
   vertical-align: middle;
 }
+
 .learn-more {
   bottom: 2.5%;
   display: inline-block;
@@ -153,6 +172,7 @@ hr {
   position: absolute;
   white-space: nowrap;
   z-index: 2;
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
   -webkit-transition: color 0.2s ease-out;
   transition: color 0.2s ease-out;
   -webkit-transform: translateX(-50%);
@@ -162,12 +182,14 @@ hr {
     color: white;
   }
 }
+
 @include media-breakpoint-up(sm) {
   .home-banner {
     background-image: url(./assets/images/main-bg.jpg);
     background-attachment: fixed;
   }
 }
+
 .tags {
   font-family: "La Belle Aurore", cursive;
   &.top-tags {
@@ -176,7 +198,7 @@ hr {
   }
   &.bottom-tags {
     position: absolute;
-    bottom: 15%;
+    bottom: 8%;
   }
 }
 
@@ -185,9 +207,11 @@ hr {
   .nav-link {
     padding: 1.4rem 0;
     margin-left: 1rem;
-    margin-bottom: -2px;
-    &.active {
-      border-bottom: 3px solid $primary;
+    @include media-breakpoint-up(md) {
+      margin-bottom: -2px;
+      &.active {
+        border-bottom: 3px solid $primary;
+      }
     }
   }
   &.nav-grad {
@@ -206,6 +230,7 @@ hr {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   }
 }
+
 #about {
   position: relative;
   width: 100%;
