@@ -9,26 +9,29 @@
       <b-collapse
         id="nav_collapse"
         is-nav>
-        <b-navbar-nav class="ml-auto">
-          <li class="nav-item">
-            <a
-              v-scroll-to="'#services'"
-              href="#services"
-              class="nav-link active">Services</a>
-          </li>
-          <li class="nav-item">
-            <a
-              v-scroll-to="'#skills'"
-              href="#skills"
-              class="nav-link">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a
-              v-scroll-to="'#about'"
-              href="#about"
-              class="nav-link">About</a>
-          </li>
-        </b-navbar-nav>
+        <scrollactive
+          :offset="0"
+          :duration="1000"
+          active-class="active"
+          class="ml-auto">
+          <b-navbar-nav>
+            <li class="nav-item">
+              <a
+                href="#services"
+                class="nav-link scrollactive-item">Services</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#skills"
+                class="nav-link scrollactive-item">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="#about"
+                class="nav-link scrollactive-item">About</a>
+            </li>
+          </b-navbar-nav>
+        </scrollactive>
       </b-collapse>
     </div>
   </b-navbar>

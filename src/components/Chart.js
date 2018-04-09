@@ -9,7 +9,7 @@ let yLabels = {
 let defaults = {
   fontColor: "white",
   gridColor: "#314149",
-  fontSize: 15,
+  fontSize: 12,
   fontFamily: '"Varela Round", sans-serif'
 };
 export default {
@@ -23,13 +23,12 @@ export default {
           "JavaScript",
           "PHP",
           "Java",
-          "ASP",
           "SQL",
           "Photoshop"
         ],
         datasets: [
           {
-            data: [90, 100, 78, 87, 45, 25, 75, 92],
+            data: [90, 100, 78, 87, 45, 75, 92],
             backgroundColor: [
               "rgba(29,233,182, 0.9)",
               "rgba(167,255,235, 0.9)",
@@ -37,8 +36,7 @@ export default {
               "rgba(167,255,235, 0.9)",
               "rgba(29,233,182, 0.9)",
               "rgba(167,255,235, 0.9)",
-              "rgba(29,233,182, 0.9)",
-              "rgba(167,255,235, 0.9)"
+              "rgba(29,233,182, 0.9)"
             ]
           }
         ]

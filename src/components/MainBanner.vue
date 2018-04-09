@@ -18,9 +18,16 @@
           href="#"
           class="btn btn-lg btn-grad mb-3">Yes, I'm Available For Hire</a></p>
         <p class="tags bottom-tags"> &nbsp;&nbsp;&nbsp;&lt;/body&gt;<br> &lt;/html&gt; </p>
-        <div class="learn-more text-center d-none d-lg-block"><a
-          v-scroll-to="'#services'"
-          href="#services">Learn More<br><i class="fa fa-chevron-down"/></a></div>
+        <div class="learn-more text-center d-none d-lg-block">
+          <scrollactive
+            :offset="0"
+            :duration="1000"
+            active-class="active">
+            <a
+              href="#services"
+              class="scrollactive-item">Learn More<br><i class="fa fa-chevron-down"/></a>
+          </scrollactive>
+        </div>
       </div>
     </div>
   </div>
