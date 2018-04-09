@@ -18,6 +18,12 @@
           </li>
           <li class="nav-item">
             <a
+              v-scroll-to="'#skills'"
+              href="#skills"
+              class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a
               v-scroll-to="'#about'"
               href="#about"
               class="nav-link">About</a>

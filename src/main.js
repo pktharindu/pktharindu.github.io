@@ -1,10 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
-import BootstrapVue from "bootstrap-vue";
+import { Navbar } from "bootstrap-vue/es/components";
+import bTooltip from "bootstrap-vue/es/directives/tooltip/tooltip";
 import VueTyperPlugin from "vue-typer";
 import VueScrollTo from "vue-scrollto";
 
-Vue.use(BootstrapVue);
+Vue.use(Navbar);
+Vue.directive("b-tooltip", bTooltip);
 Vue.use(VueTyperPlugin);
 Vue.use(VueScrollTo, {
   duration: 1000,

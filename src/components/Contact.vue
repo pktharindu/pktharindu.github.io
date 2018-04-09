@@ -1,0 +1,19 @@
+<template>
+  <div
+    id="contact"
+    class="bg-primary py-4">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col col-md-8 mx-auto text-center">
+          <h3>Get in Touch!</h3>
+          <hr class="short dark">
+          <p class="statement">I'm currently accepting new projects and would love to hear about yours. Please
+          take a few minutes to tell me about it.</p>
+          <a
+            href="#"
+            class="btn btn-lg btn-outline-dark">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

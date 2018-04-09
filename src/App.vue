@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <home/>
+    <main-banner/>
+    <app-header/>
+    <services/>
+    <skills/>
+    <about/>
+    <contact/>
     <app-footer/>
   </div>
 </template>
 
 <script>
-import Home from "@/views/Home.vue";
+import MainBanner from "@/components/MainBanner";
+import Header from "@/components/Header.vue";
+import Services from "@/components/Services";
+import Skills from "@/components/Skills";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
-    Home,
+    MainBanner,
+    "app-header": Header,
+    Services,
+    Skills,
+    About,
+    Contact,
     "app-footer": Footer
   }
 };
@@ -19,238 +34,4 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/app";
-
-#app {
-  font-family: "Varela Round", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Montserrat", sans-serif;
-}
-.rock-salt {
-  font-family: "Rock Salt", cursive;
-}
-.statement {
-  font-size: 1.3rem;
-}
-.navbar {
-  .nav-link {
-    padding: 1.4rem 0;
-    margin-left: 1rem;
-    margin-bottom: -2px;
-    &.active {
-      border-bottom: 3px solid $primary;
-    }
-  }
-}
-.nav-grad {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-.btn {
-  flex: 1 1 auto;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  border-radius: 5em;
-  text-transform: uppercase;
-  -webkit-transition: all 0.3s linear;
-  transition: 0.5s;
-  background-size: 200% auto;
-  padding: 0.6rem 1.4rem;
-  &:hover {
-    padding: 0.6rem 1.7rem;
-  }
-  &[class*="btn-outline"] {
-    border-width: 2px;
-  }
-  &.btn-grad {
-    border: 0;
-    color: white;
-    background-image: linear-gradient(
-      to right,
-      #29c5fd 0%,
-      $primary 51%,
-      #29c5fd 100%
-    );
-    &.btn-grad:hover {
-      color: white;
-      background-position: right center;
-    }
-  }
-  &.btn-lg {
-    font-size: 0.9rem;
-    padding: 0.9rem 1.5rem;
-    &:hover {
-      padding: 0.9rem 2rem;
-    }
-  }
-}
-hr {
-  border-top-width: 3px;
-  &.short {
-    max-width: 80px;
-  }
-  &.primary {
-    border-color: $primary;
-  }
-  &.dark {
-    border-color: $body-color;
-  }
-}
-.tags {
-  font-family: "La Belle Aurore", cursive;
-  &.top-tags {
-    position: absolute;
-    top: 8%;
-  }
-  &.bottom-tags {
-    position: absolute;
-    bottom: 15%;
-  }
-}
-::-moz-selection {
-  background: $primary;
-}
-::selection {
-  background: $primary;
-}
-// Vue Typer (https://github.com/cngu/vue-typer)
-.vue-typer {
-  .custom.char {
-    color: inherit;
-    &.selected {
-      background-color: #3bd3a9;
-    }
-  }
-  .custom.caret {
-    background-color: white;
-  }
-}
-.hero-content h1 {
-  font-size: 1.5rem;
-}
-@include media-breakpoint-up(md) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-}
-#fullscreen-banner {
-  height: 100vh;
-  position: relative;
-  width: 100%;
-  min-height: 350px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-}
-.home-banner:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(49, 61, 65, 0.6)),
-    to(rgba(49, 61, 65, 0.6))
-  );
-  background-image: linear-gradient(
-    90deg,
-    rgba(49, 61, 65, 0.6),
-    rgba(49, 61, 65, 0.6)
-  );
-}
-.hero-container {
-  display: table;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 100%;
-}
-.hero-content {
-  display: table-cell;
-  position: relative;
-  z-index: 10;
-  vertical-align: middle;
-}
-.learn-more {
-  bottom: 2.5%;
-  display: inline-block;
-  left: 50%;
-  padding: 20px;
-  position: absolute;
-  white-space: nowrap;
-  z-index: 2;
-  -webkit-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}
-@include media-breakpoint-up(sm) {
-  .home-banner {
-    background-image: url(./assets/images/main-bg.jpg);
-    background-attachment: fixed;
-  }
-}
-.profile-container {
-  img.profile {
-    width: 100%;
-    max-width: 200px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-  }
-}
-#about {
-  position: relative;
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url(./assets/images/about.jpg);
-  background-attachment: fixed;
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: none;
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      right top,
-      from(rgba(29, 29, 29, 0.9)),
-      to(rgba(29, 29, 29, 0.9))
-    );
-    background-image: linear-gradient(
-      90deg,
-      rgba(29, 29, 29, 0.9),
-      rgba(29, 29, 29, 0.9)
-    );
-  }
-}
 </style>
