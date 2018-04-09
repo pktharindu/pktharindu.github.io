@@ -222,4 +222,35 @@ hr {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
   }
 }
+#about {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./assets/images/about.jpg);
+  background-attachment: fixed;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(rgba(29, 29, 29, 0.9)),
+      to(rgba(29, 29, 29, 0.9))
+    );
+    background-image: linear-gradient(
+      90deg,
+      rgba(29, 29, 29, 0.9),
+      rgba(29, 29, 29, 0.9)
+    );
+  }
+}
 </style>
