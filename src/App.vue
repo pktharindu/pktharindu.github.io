@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <main-banner/>
-    <app-header/>
+    <app-header @contactVisibility="changeVisibility($event)"/>
     <services/>
     <skills/>
     <about/>
-    <contact/>
+    <contact @contactVisibility="changeVisibility($event)"/>
+    <contact-form
+      :contact-show="contactShow"
+      @contactVisibility="changeVisibility($event)"/>
     <app-footer/>
   </div>
 </template>
@@ -17,6 +20,7 @@ import Services from "@/components/Services";
 import Skills from "@/components/Skills";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer.vue";
 
 export default {
@@ -27,7 +31,18 @@ export default {
     Skills,
     About,
     Contact,
+    ContactForm,
     "app-footer": Footer
+  },
+  data() {
+    return {
+      contactShow: false
+    };
+  },
+  methods: {
+    changeVisibility(status) {
+      this.contactShow = status;
+    }
   }
 };
 </script>

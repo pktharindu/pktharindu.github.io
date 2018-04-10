@@ -13,7 +13,7 @@
           :offset="0"
           :duration="1000"
           active-class="active"
-          class="ml-auto">
+          class="ml-auto text-center">
           <b-navbar-nav>
             <li class="nav-item">
               <a
@@ -30,9 +30,27 @@
                 href="#about"
                 class="nav-link scrollactive-item">About</a>
             </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-block text-light d-md-none btn-dark"
+                @click="handleDisplay">Contact</button>
+            </li>
           </b-navbar-nav>
         </scrollactive>
+        <button
+          class="btn nav-btn btn-dark my-2 d-none d-md-block"
+          @click="handleDisplay">Contact</button>
       </b-collapse>
     </div>
   </b-navbar>
 </template>
+
+<script>
+export default {
+  methods: {
+    handleDisplay() {
+      this.$emit("contactVisibility", true);
+    }
+  }
+};
+</script>

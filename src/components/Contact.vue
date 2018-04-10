@@ -9,11 +9,21 @@
           <hr class="short dark">
           <p class="statement">I'm currently accepting new projects and would love to hear about yours. Please
           take a few minutes to tell me about it.</p>
-          <a
-            href="#"
-            class="btn btn-lg btn-outline-dark">Contact Me</a>
+          <button
+            class="btn btn-lg btn-outline-dark"
+            @click="handleDisplay">Contact Me</button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    handleDisplay() {
+      this.$emit("contactVisibility", true);
+    }
+  }
+};
+</script>
