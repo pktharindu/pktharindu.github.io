@@ -9,6 +9,7 @@
       hide-footer
       centered
       no-close-on-backdrop
+      no-close-on-esc
       ok-only
       body-bg-variant="dark"
       body-text-variant="white"
@@ -23,61 +24,122 @@
       <hr class="short primary">
       <p class="statement mb-4">After you introduce yourself and your project, I'll get in touch with you to
       schedule a time to chat. You should expect to hear from me in a day or so.</p>
+
       <form @submit="handleOk">
         <div class="col-lg-10 mx-auto">
           <div class="row">
-            <div class="col-md-6 mb-4">
-              <input
-                id="name"
-                v-model="input.name"
-                name="name"
-                type="text"
-                class="form-control"
-                placeholder="Name *">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  v-validate="'required|alpha_spaces'"
+                  id="name"
+                  v-model="input.name"
+                  :class="{'is-invalid' : errors.has('name')}"
+                  name="name"
+                  type="text"
+                  class="form-control"
+                  placeholder="Name *">
+                <i
+                  v-show="errors.has('name')"
+                  class="fa fa-warning text-danger input-icon"/>
+                <div
+                  v-show="errors.has('name')"
+                  class="invalid-feedback text-left">
+                  {{ errors.first('name') }}
+                </div>
+              </div>
             </div>
-            <div class="col-md-6 mb-4">
-              <input
-                id="email"
-                v-model="input.email"
-                name="email"
-                type="email"
-                class="form-control"
-                placeholder="Email Address *">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <input
-                id="phone"
-                v-model="input.phone"
-                name="phone"
-                type="text"
-                class="form-control"
-                placeholder="Phone Number">
-            </div>
-            <div class="col-md-6 mb-4">
-              <input
-                id="web"
-                v-model="input.web"
-                name="web"
-                type="text"
-                class="form-control"
-                placeholder="Website">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col mb-4">
-              <textarea
-                id="message"
-                v-model="input.message"
-                name="message"
-                class="form-control"
-                rows="5"
-                placeholder="Tell me about your project... what is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"/>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  v-validate="'required|email'"
+                  id="email"
+                  v-model="input.email"
+                  :class="{'is-invalid' : errors.has('email')}"
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Email Address *">
+                <i
+                  v-show="errors.has('email')"
+                  class="fa fa-warning text-danger input-icon"/>
+                <div
+                  v-show="errors.has('email')"
+                  class="invalid-feedback text-left">
+                  {{ errors.first('email') }}
+                </div>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-8 col-lg-6 mx-auto mb-4">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  v-validate="'numeric'"
+                  id="phone"
+                  v-model="input.phone"
+                  :class="{'is-invalid' : errors.has('phone')}"
+                  name="phone"
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone Number">
+                <i
+                  v-show="errors.has('phone')"
+                  class="fa fa-warning text-danger input-icon"/>
+                <div
+                  v-show="errors.has('phone')"
+                  class="invalid-feedback text-left">
+                  {{ errors.first('phone') }}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  v-validate="'url'"
+                  id="website"
+                  v-model="input.website"
+                  :class="{'is-invalid' : errors.has('website')}"
+                  name="website"
+                  type="text"
+                  class="form-control"
+                  placeholder="Website">
+                <i
+                  v-show="errors.has('website')"
+                  class="fa fa-warning text-danger input-icon"/>
+                <div
+                  v-show="errors.has('website')"
+                  class="invalid-feedback text-left">
+                  {{ errors.first('website') }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <textarea
+                  v-validate="'required'"
+                  id="message"
+                  v-model="input.message"
+                  :class="{'is-invalid' : errors.has('message')}"
+                  name="message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Tell me about your project... what is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"/>
+                <i
+                  v-show="errors.has('message')"
+                  class="fa fa-warning text-danger input-icon"/>
+                <div
+                  v-show="errors.has('message')"
+                  class="invalid-feedback text-left">
+                  {{ errors.first('message') }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8 col-lg-6 mx-auto">
               <button
                 type="submit"
                 class="btn btn-grad btn-lg text-dark btn-block submit mb-3"
@@ -88,6 +150,7 @@
         </div>
       </form>
     </b-modal>
+
     <transition name="slide-fade">
       <button
         v-show="contactShow"
@@ -112,7 +175,7 @@ export default {
         name: "",
         email: "",
         phone: "",
-        web: "",
+        website: "",
         message: ""
       },
       names: []
@@ -120,23 +183,34 @@ export default {
   },
   methods: {
     handleDisplay() {
+      this.clearErrors();
+      this.clearForm();
       this.$emit("contactVisibility", false);
     },
     clearForm() {
       this.input.name = "";
+      this.input.email = "";
+      this.input.phone = "";
+      this.input.website = "";
+      this.input.message = "";
+    },
+    clearErrors() {
+      this.errors.items = [];
     },
     handleOk(evt) {
       // Prevent modal from closing
       evt.preventDefault();
-      if (!this.input.name) {
-        alert("Please enter your name");
-      } else {
-        this.handleSubmit();
-      }
+      this.$validator.validateAll().then(result => {
+        if (result) {
+          this.handleSubmit();
+          return;
+        }
+        alert("Correct them errors!");
+      });
     },
     handleSubmit() {
+      alert("Form Submitted!");
       this.names.push(this.input.name);
-      this.clearForm();
       this.handleDisplay();
     }
   }
