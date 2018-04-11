@@ -177,8 +177,7 @@ export default {
         phone: "",
         website: "",
         message: ""
-      },
-      names: []
+      }
     };
   },
   methods: {
@@ -209,8 +208,28 @@ export default {
       });
     },
     handleSubmit() {
-      alert("Form Submitted!");
-      this.names.push(this.input.name);
+      // Using smtpjs.com and elasticemail.com
+
+      window.Email.send(
+        this.input.email,
+        "pktharindu@outlook.com",
+        "Message from pktharindu.github.io",
+        JSON.stringify(this.input),
+        "smtp.elasticemail.com",
+        "pktharindu@outlook.com",
+        "990b2129-c30e-4fa5-b2db-515ef2a162a0",
+        function done(message) {
+          console.log(message);
+          if (message === "OK") {
+            alert("Form Submitted!");
+            return;
+          }
+          alert("not working");
+        }
+      );
+
+      // 7a63a7fe-f2ab-442c-a2e2-e94033ab957e
+
       this.handleDisplay();
     }
   }
