@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <notifications
+      :duration="500000"
+      :speed="1000"/>
     <main-banner/>
     <app-header @contactVisibility="changeVisibility($event)"/>
     <services/>

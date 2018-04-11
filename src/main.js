@@ -6,6 +6,7 @@ import bTooltip from "bootstrap-vue/es/directives/tooltip/tooltip";
 import VueTyperPlugin from "vue-typer";
 import VueScrollactive from "vue-scrollactive";
 import VeeValidate from "vee-validate";
+import Notifications from "vue-notification";
 
 Vue.use(Navbar);
 Vue.use(Modal);
@@ -13,6 +14,7 @@ Vue.directive("b-tooltip", bTooltip);
 Vue.use(VueTyperPlugin);
 Vue.use(VueScrollactive);
 Vue.use(VeeValidate);
+Vue.use(Notifications);
 
 Vue.config.productionTip = false;
 

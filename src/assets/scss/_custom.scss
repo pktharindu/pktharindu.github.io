@@ -81,6 +81,23 @@ hr {
   background: $primary;
 }
 
+//Notification
+.notifications {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.vue-notification {
+  font-size: 1rem;
+  a {
+    color: white;
+  }
+  &.primary {
+    color: $dark;
+    background: $primary;
+    border-left-color: darken($primary, 25%);
+  }
+}
+
 //Main Banner
 .vue-typer {
   .custom.char {

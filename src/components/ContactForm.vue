@@ -197,39 +197,49 @@ export default {
       this.errors.items = [];
     },
     handleOk(evt) {
-      // Prevent modal from closing
       evt.preventDefault();
       this.$validator.validateAll().then(result => {
         if (result) {
           this.handleSubmit();
           return;
         }
-        alert("Correct them errors!");
+        this.$notify({
+          type: "error",
+          title: "Oops!",
+          text:
+            "Sorry, but your form was not submitted. Please correct the errors and submit the form again."
+        });
       });
     },
     handleSubmit() {
       // Using smtpjs.com and elasticemail.com
-
+      let self = this;
       window.Email.send(
         this.input.email,
         "pktharindu@outlook.com",
-        "Message from pktharindu.github.io",
+        "Message sent from pktharindu.github.io",
         JSON.stringify(this.input),
-        "smtp.elasticemail.com",
-        "pktharindu@outlook.com",
-        "990b2129-c30e-4fa5-b2db-515ef2a162a0",
-        function done(message) {
-          console.log(message);
-          if (message === "OK") {
-            alert("Form Submitted!");
-            return;
+        {
+          token: "ddb60294-d122-46ba-a0a5-5981e4bcb407",
+          callback: function done(message) {
+            console.log(message);
+            if (message === "OK") {
+              self.$notify({
+                type: "primary",
+                title: "Success!",
+                text: "Your massage has been sent. Thank you!"
+              });
+              return;
+            }
+            self.$notify({
+              type: "error",
+              title: "Oops!",
+              text:
+                "Something went wrong on the server. If the problem persists, send me an e-mail <a href='mailto:pktharindu@outlook.com'>pktharindu@outlook.com</a>"
+            });
           }
-          alert("not working");
         }
       );
-
-      // 7a63a7fe-f2ab-442c-a2e2-e94033ab957e
-
       this.handleDisplay();
     }
   }
