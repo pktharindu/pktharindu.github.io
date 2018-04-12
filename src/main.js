@@ -11,12 +11,13 @@ import VueObserveVisibility from "vue-observe-visibility";
 
 Vue.use(Navbar);
 Vue.use(Modal);
-Vue.directive("b-tooltip", bTooltip);
 Vue.use(VueTyperPlugin);
 Vue.use(VueScrollactive);
 Vue.use(VeeValidate);
 Vue.use(Notifications);
 Vue.use(VueObserveVisibility);
+
+Vue.directive("b-tooltip", bTooltip);
 
 Vue.config.productionTip = false;
 
