@@ -13,7 +13,9 @@
       </div>
       <div class="row">
         <div class="col-md-8 mb-4">
-          <chart/>
+          <chart
+            v-observe-visibility="visibilityChanged"
+            :is-visible="isVisible"/>
         </div>
         <div class="col-md-4 text-center text-md-left mb-4">
           <dl>
@@ -66,6 +68,7 @@ export default {
   components: { Chart },
   data() {
     return {
+      isVisible: false,
       skills: {
         frontend: ["SCSS", "Bootstrap", "Vue.js", "jQuery"],
         backend: ["Laravel", "APIs", "Devops", "NoSQL"],
@@ -74,6 +77,11 @@ export default {
         eCommerce: ["Woocommerce", "Shopify", "Magento"]
       }
     };
+  },
+  methods: {
+    visibilityChanged(isVisible) {
+      this.isVisible = isVisible;
+    }
   }
 };
 </script>

@@ -7,6 +7,7 @@ import VueTyperPlugin from "vue-typer";
 import VueScrollactive from "vue-scrollactive";
 import VeeValidate from "vee-validate";
 import Notifications from "vue-notification";
+import VueObserveVisibility from "vue-observe-visibility";
 
 Vue.use(Navbar);
 Vue.use(Modal);
@@ -15,6 +16,7 @@ Vue.use(VueTyperPlugin);
 Vue.use(VueScrollactive);
 Vue.use(VeeValidate);
 Vue.use(Notifications);
+Vue.use(VueObserveVisibility);
 
 Vue.config.productionTip = false;
 
