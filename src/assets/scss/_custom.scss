@@ -46,6 +46,14 @@ h6 {
         $primary 51%,
         #29c5fd 100%
     );
+    &:not(:disabled):not(.disabled):active {
+      background-image: linear-gradient(
+          to right,
+          #29c5fd 0%,
+          $primary 51%,
+          #29c5fd 100%
+      );
+    }
     &.btn-grad:hover {
       color: white;
       background-position: right center;

@@ -7,13 +7,16 @@
       size="lg"
       hide-header
       hide-footer
+      lazy
       centered
       no-close-on-backdrop
       no-close-on-esc
       ok-only
       body-bg-variant="dark"
       body-text-variant="white"
-      @shown="clearForm"
+      @show="clearForm"
+      @shown="focusMyElement"
+      @hidden="clearErrors"
     >
       <img
         class="logo my-4 d-block mx-auto"
@@ -33,6 +36,7 @@
                 <input
                   v-validate="'required|alpha_spaces'"
                   id="name"
+                  ref="focusThis"
                   v-model="input.name"
                   :class="{'is-invalid' : errors.has('name')}"
                   name="name"
@@ -57,7 +61,7 @@
                   v-model="input.email"
                   :class="{'is-invalid' : errors.has('email')}"
                   name="email"
-                  type="email"
+                  type="text"
                   class="form-control"
                   placeholder="Email Address *">
                 <i
@@ -181,6 +185,9 @@ export default {
     };
   },
   methods: {
+    focusMyElement() {
+      this.$refs.focusThis.focus();
+    },
     handleDisplay() {
       this.clearErrors();
       this.clearForm();
@@ -201,6 +208,7 @@ export default {
       this.$validator.validateAll().then(result => {
         if (result) {
           this.handleSubmit();
+          this.handleDisplay();
           return;
         }
         this.$notify({
@@ -240,7 +248,6 @@ export default {
           }
         }
       );
-      this.handleDisplay();
     }
   }
 };
