@@ -43,7 +43,16 @@
             <p>Whether you're a startup looking for help with your app, a non-profit that wants to make an
             impact with your website, or a small business that needs a full branding makeover, I would
             love to help you find the right solution that changes your game.</p>
-            <p class="mb-2">Have a project you'd like to discuss? <a href="#">Get in touch!</a></p>
+            <p class="mb-2">Have a project you'd like to discuss?
+              <scrollactive
+                :offset="0"
+                :duration="1000"
+                class="d-inline">
+                <a 
+                  href="#contact" 
+                  class="scrollactive-item">Get in touch!</a>
+              </scrollactive>
+            </p>
           </div>
         </div>
       </div>

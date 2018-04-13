@@ -55,6 +55,7 @@
                 class="badge badge-pill bg-white text-dark mr-1">{{ skill }}</span>
             </dd>
           </dl>
+          <small>The list shown here is by no means exhaustive.</small>
         </div>
       </div>
     </div>
@@ -71,10 +72,10 @@ export default {
       isVisible: false,
       skills: {
         frontend: ["SCSS", "Bootstrap", "Vue.js", "jQuery"],
-        backend: ["Laravel", "APIs", "Devops", "NoSQL"],
+        backend: ["Laravel", "REST APIs", "Devops", "SQL"],
         cms: ["October", "Wordpress"],
         cloud: ["AWS", "Google", "Firebase"],
-        eCommerce: ["Woocommerce", "Shopify", "Magento"]
+        eCommerce: ["Woocommerce", "Magento"]
       }
     };
   },

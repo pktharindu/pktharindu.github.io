@@ -64,9 +64,7 @@ export default {
                 fontSize: defaults.fontSize,
                 fontFamily: defaults.fontFamily,
                 beginAtZero: true,
-                callback: function(value) {
-                  return yLabels[value];
-                }
+                callback: value => yLabels[value]
               }
             }
           ],

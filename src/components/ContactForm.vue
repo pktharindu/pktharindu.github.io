@@ -221,7 +221,6 @@ export default {
     },
     handleSubmit() {
       // Using smtpjs.com and elasticemail.com
-      let self = this;
       window.Email.send(
         this.input.email,
         "pktharindu@outlook.com",
@@ -229,21 +228,20 @@ export default {
         JSON.stringify(this.input),
         {
           token: "ddb60294-d122-46ba-a0a5-5981e4bcb407",
-          callback: function done(message) {
+          callback: message => {
             console.log(message);
             if (message === "OK") {
-              self.$notify({
+              this.$notify({
                 type: "primary",
                 title: "Success!",
                 text: "Your massage has been sent. Thank you!"
               });
               return;
             }
-            self.$notify({
+            this.$notify({
               type: "error",
               title: "Oops!",
-              text:
-                "Something went wrong on the server. If the problem persists, send me an e-mail <a href='mailto:pktharindu@outlook.com'>pktharindu@outlook.com</a>"
+              text: `Something went wrong on the server. If the problem persists, send me an e-mail <a href='mailto:pktharindu@outlook.com'>pktharindu@outlook.com</a>`
             });
           }
         }
