@@ -89,6 +89,23 @@ hr {
   background: $primary;
 }
 
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $dark;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5em;
+  background-color: transparentize($primary, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $primary;
+}
+
 //Notification
 .notifications {
   margin-top: 20px;

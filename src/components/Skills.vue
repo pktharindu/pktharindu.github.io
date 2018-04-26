@@ -19,41 +19,17 @@
         </div>
         <div class="col-md-4 text-center text-md-left mb-4">
           <dl>
-            <dt>Front-end</dt>
-            <dd>
-              <span
-                v-for="skill in skills.frontend"
-                :key="skill"
-                class="badge badge-pill bg-white text-dark mr-1">{{ skill }}</span>
-            </dd>
-            <dt>Back-end</dt>
-            <dd>
-              <span
-                v-for="skill in skills.backend"
-                :key="skill"
-                class="badge badge-pill bg-white text-dark mr-1">{{ skill }}</span>
-            </dd>
-            <dt>CMS</dt>
-            <dd>
-              <span
-                v-for="skill in skills.cms"
-                :key="skill"
-                class="badge badge-pill bg-white text-dark mr-1">{{ skill }}</span>
-            </dd>
-            <dt>Cloud</dt>
-            <dd>
-              <span
-                v-for="skill in skills.cloud"
-                :key="skill"
-                class="badge badge-pill bg-white text-dark mr-1">{{ skill }}</span>
-            </dd>
-            <dt>E-Commerce</dt>
-            <dd>
-              <span
-                v-for="skill in skills.eCommerce"
-                :key="skill"
-                class="badge badge-pill bg-white text-dark mr-1">{{ skill }}</span>
-            </dd>
+            <div
+              v-for="(obj,index) in skills"
+              :key="index">
+              <dt>{{ obj.name }}</dt>
+              <dd>
+                <span
+                  v-for="skill in obj.skillset"
+                  :key="skill"
+                  class="badge badge-pill bg-white text-dark mr-1 my-1">{{ skill }}</span>
+              </dd>
+            </div>
           </dl>
           <small>The list shown here is by no means exhaustive.</small>
         </div>
@@ -70,13 +46,36 @@ export default {
   data() {
     return {
       isVisible: false,
-      skills: {
-        frontend: ["SCSS", "Bootstrap", "Vue.js", "jQuery"],
-        backend: ["Laravel", "REST APIs", "Devops", "SQL"],
-        cms: ["October", "Wordpress"],
-        cloud: ["AWS", "Google", "Firebase"],
-        eCommerce: ["Woocommerce", "Magento"]
-      }
+      skills: [
+        {
+          name: "Front-end",
+          skillset: [
+            "HTML5",
+            "CSS3",
+            "SCSS",
+            "Bootstrap",
+            "Javascript",
+            "Vue.js",
+            "jQuery"
+          ]
+        },
+        {
+          name: "Back-end",
+          skillset: ["PHP", "Laravel", "REST APIs", "Devops", "SQL"]
+        },
+        {
+          name: "CMS",
+          skillset: ["October", "Wordpress"]
+        },
+        {
+          name: "Cloud",
+          skillset: ["AWS", "Google", "Firebase"]
+        },
+        {
+          name: "E-Commerce",
+          skillset: ["Woocommerce", "Magento"]
+        }
+      ]
     };
   },
   methods: {

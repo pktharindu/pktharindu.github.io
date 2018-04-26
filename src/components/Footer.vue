@@ -7,6 +7,10 @@
           <div class="social-links">
             <a
               v-b-tooltip.hover
+              title="Email"
+              href="mailto:pktharindu@outlook.com"><i class="fa fa-envelope"/></a>
+            <a
+              v-b-tooltip.hover
               title="Instagram"
               href="https://www.instagram.com/pktharindu/"
               target="_blank"><i class="fa fa-instagram"/></a>
