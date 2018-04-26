@@ -4,7 +4,9 @@
     class="bg-dark text-light py-5">
     <div class="container mt-4">
       <div class="row">
-        <div class="col mb-4">
+        <div
+          class="col mb-4"
+          data-aos="fade-down">
           <div class="text-center">
             <h3>Technical Skills</h3>
             <hr class="primary short">
@@ -17,7 +19,9 @@
             v-observe-visibility="visibilityChanged"
             :is-visible="isVisible"/>
         </div>
-        <div class="col-md-4 text-center text-md-left mb-4">
+        <div
+          class="col-md-4 text-center text-md-left mb-4"
+          data-aos="fade-left">
           <dl>
             <div
               v-for="(obj,index) in skills"

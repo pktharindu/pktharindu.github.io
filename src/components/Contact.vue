@@ -4,7 +4,9 @@
     class="bg-primary py-4">
     <div class="container py-5">
       <div class="row">
-        <div class="col col-md-8 mx-auto text-center">
+        <div
+          class="col col-md-8 mx-auto text-center"
+          data-aos="flip-down">
           <h3>Get in Touch!</h3>
           <hr class="short dark">
           <p class="statement">I'm currently accepting new projects and would love to hear about yours. Please

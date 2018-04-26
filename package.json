@@ -9,6 +9,7 @@
     "deploy": "npm run build && vcg --branch=master"
   },
   "dependencies": {
+    "aos": "^2.2.0",
     "bootstrap-vue": "^2.0.0-rc.6",
     "chart.js": "^2.7.2",
     "font-awesome": "^4.7.0",

@@ -5,7 +5,9 @@
     <div class="container mt-4">
       <div class="row">
         <div class="col mb-4">
-          <div class="text-center">
+          <div
+            class="text-center"
+            data-aos="fade-down">
             <h3>About Me</h3>
             <hr class="primary short">
           </div>
@@ -13,9 +15,16 @@
       </div>
       <div class="row">
         <div class="col-md-3 mb-4">
-          <div class="text-center profile-container">
+          <div
+            class="text-center profile-container"
+            data-aos="fade-right">
             <img
-              class="img-fluid rounded-circle mx-auto profile mb-4"
+              class="
+            img-fluid
+            rounded-circle
+            mx-auto
+            profile
+            mb-4"
               src="@/assets/images/profile.jpg"
               alt="Picture of Tharindu">
             <h5 class="mb-3">Designer + Developer</h5>
@@ -23,7 +32,9 @@
           </div>
         </div>
         <div class="col mb-4">
-          <div class="text-justify">
+          <div
+            class="text-justify"
+            data-aos="fade-left">
             <p>Hi, I'm Tharindu and I'm a “Design-geneer”&hellip; That means I design and code. I started
             out my career doing traditional print design but quickly fell in love with the web.</p>
             <p>After graduating from <a
@@ -48,8 +59,8 @@
                 :offset="0"
                 :duration="1000"
                 class="d-inline">
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   class="scrollactive-item">Get in touch!</a>
               </scrollactive>
             </p>

@@ -4,7 +4,9 @@
     class="py-5">
     <div class="container text-center">
       <div class="row">
-        <div class="col">
+        <div
+          class="col"
+          data-aos="fade-down">
           <h3 class="mt-4">My Services</h3>
           <hr class="short primary">
           <p class="statement mb-5">I've got chops in all phases of the design process.</p>
@@ -12,7 +14,9 @@
       </div>
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="expertise-block">
+          <div
+            class="expertise-block"
+            data-aos="fade-down-right">
             <i class="fa fa-map-o fa-3x text-primary mb-4"/>
             <h4 class="mb-3">Strategy</h4>
             <p class="summary">I collaborate with clients and peers to nurture and transform ideas into well
@@ -21,14 +25,18 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="expertise-block">
+          <div
+            class="expertise-block"
+            data-aos="fade-up">
             <i class="fa fa-magic fa-3x text-primary mb-4"/>
             <h4 class="mb-3">UX/UI</h4>
             <p class="summary">I sketch and wireframe interfaces focusing on content structure, intuitive UI
             patterns and simple interactions. I'm a minimalist who truly believes that less is more.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div
+          class="col-md-4 mb-4"
+          data-aos="fade-down-left">
           <div class="expertise-block">
             <i class="fa fa-code fa-3x text-primary mb-4"/>
             <h4 class="mb-3">Code</h4>
