@@ -6,7 +6,7 @@
     <main-banner/>
     <app-header @contactVisibility="changeVisibility($event)"/>
     <services/>
-    <work/>
+    <!--<work/>-->
     <skills/>
     <about/>
     <contact @contactVisibility="changeVisibility($event)"/>
