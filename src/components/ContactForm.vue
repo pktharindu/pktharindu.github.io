@@ -146,7 +146,7 @@
             <div class="col-md-8 col-lg-6 mx-auto">
               <button
                 type="submit"
-                class="btn btn-grad btn-lg text-dark btn-block submit mb-3"
+                class="btn btn-grad-primary btn-lg text-dark btn-block submit mb-3"
               >Send<i class="fa fa-paper-plane-o ml-2"/></button>
               <p>* Required</p>
             </div>

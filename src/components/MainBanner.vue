@@ -20,7 +20,7 @@
             :duration="1000">
             <a
               href="#contact"
-              class="btn btn-lg btn-grad scrollactive-item mb-3">Yes, I'm Available For Hire</a>
+              class="btn btn-lg btn-grad-primary scrollactive-item mb-3">Yes, I'm Available For Hire</a>
           </scrollactive>
         </p>
         <p class="tags bottom-tags"> &nbsp;&nbsp;&nbsp;&lt;/body&gt;<br> &lt;/html&gt; </p>

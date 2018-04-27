@@ -14,12 +14,6 @@ let defaults = {
 };
 export default {
   extends: Bar,
-  props: {
-    isVisible: {
-      type: Boolean,
-      default: false
-    }
-  },
   data() {
     return {
       chartData: {
@@ -84,12 +78,7 @@ export default {
       }
     };
   },
-  watch: {
-    // whenever isVisible changes, this function will run
-    isVisible(isVisible) {
-      if (isVisible) {
-        this.renderChart(this.chartData, this.chartOptions);
-      }
-    }
+  mounted() {
+    this.renderChart(this.chartData, this.chartOptions);
   }
 };

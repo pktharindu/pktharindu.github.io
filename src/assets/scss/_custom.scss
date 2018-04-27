@@ -37,9 +37,14 @@ h6 {
   &[class*="btn-outline"] {
     border-width: 2px;
   }
-  &.btn-grad {
+  &.btn-grad-primary, &.btn-grad-dark {
     border: 0;
     color: white;
+    &:hover {
+      background-position: right center;
+    }
+  }
+  &.btn-grad-primary {
     background-image: linear-gradient(
         to right,
         #29c5fd 0%,
@@ -54,9 +59,21 @@ h6 {
           #29c5fd 100%
       );
     }
-    &.btn-grad:hover {
-      color: white;
-      background-position: right center;
+  }
+  &.btn-grad-dark {
+    background-image: linear-gradient(
+        to right,
+        $dark 0%,
+        #4b6167 51%,
+        $dark 100%
+    );
+    &:not(:disabled):not(.disabled):active {
+      background-image: linear-gradient(
+          to right,
+          $dark 0%,
+          #4b6167 51%,
+          $dark 100%
+      );
     }
   }
   &.btn-lg {
@@ -245,6 +262,9 @@ hr {
 
 //Header
 .navbar {
+  @include media-breakpoint-up(md) {
+    border-top: 6px solid #1ed7a9;
+  }
   .nav-link {
     padding: 1.4rem 0;
     @include media-breakpoint-up(md) {

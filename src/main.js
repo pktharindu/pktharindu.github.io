@@ -7,7 +7,6 @@ import VueTyperPlugin from "vue-typer";
 import VueScrollactive from "vue-scrollactive";
 import VeeValidate from "vee-validate";
 import Notifications from "vue-notification";
-import VueObserveVisibility from "vue-observe-visibility";
 import AOS from "aos";
 
 Vue.use(Navbar);
@@ -16,18 +15,18 @@ Vue.use(VueTyperPlugin);
 Vue.use(VueScrollactive);
 Vue.use(VeeValidate);
 Vue.use(Notifications);
-Vue.use(VueObserveVisibility);
 
 Vue.directive("b-tooltip", bTooltip);
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = true;
 
 new Vue({
-  created() {
+  mounted() {
     AOS.init({
       offset: 0,
       duration: 1000,
       delay: 300,
+      disable: "mobile",
       anchorPlacement: "top-top"
     });
   },

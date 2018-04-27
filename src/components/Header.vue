@@ -10,7 +10,7 @@
         id="nav_collapse"
         is-nav>
         <scrollactive
-          :offset="0"
+          :offset="75"
           :duration="1000"
           active-class="active"
           class="ml-auto text-center">
@@ -32,13 +32,13 @@
             </li>
             <li class="nav-item">
               <button
-                class="btn btn-block text-light d-md-none btn-dark"
+                class="btn btn-block text-light d-md-none btn-grad-dark"
                 @click="handleDisplay">Contact</button>
             </li>
           </b-navbar-nav>
         </scrollactive>
         <button
-          class="btn nav-btn btn-dark my-2 d-none d-md-block"
+          class="btn nav-btn my-2 d-none d-md-block btn-grad-dark"
           @click="handleDisplay">Contact</button>
       </b-collapse>
     </div>

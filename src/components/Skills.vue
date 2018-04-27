@@ -14,10 +14,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8 mb-4">
-          <chart
-            v-observe-visibility="visibilityChanged"
-            :is-visible="isVisible"/>
+        <div 
+          class="col-md-8 mb-4"
+          data-aos="fade-right">
+          <chart/>
         </div>
         <div
           class="col-md-4 text-center text-md-left mb-4"

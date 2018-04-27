@@ -12,7 +12,7 @@
           <p class="statement">I'm currently accepting new projects and would love to hear about yours. Please
           take a few minutes to tell me about it.</p>
           <button
-            class="btn btn-lg btn-outline-dark"
+            class="btn btn-lg btn-grad-dark"
             @click="handleDisplay">Contact Me</button>
         </div>
       </div>
