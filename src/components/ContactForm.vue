@@ -22,11 +22,11 @@
         class="logo my-4 d-block mx-auto"
         src="@/assets/images/logo.svg"
         alt="logo"
-        width="60">
+        width="60"
+      >
       <h3>Ok, just a few quick questions.</h3>
       <hr class="short primary">
-      <p class="statement mb-4">After you introduce yourself and your project, I'll get in touch with you to
-      schedule a time to chat. You should expect to hear from me in a day or so.</p>
+      <p class="statement mb-4">After you introduce yourself and your project, I'll get in touch with you to schedule a time to chat. You should expect to hear from me in a day or so.</p>
 
       <form @submit="handleOk">
         <div class="col-lg-10 mx-auto">
@@ -42,13 +42,16 @@
                   name="name"
                   type="text"
                   class="form-control"
-                  placeholder="Name *">
+                  placeholder="Name *"
+                >
                 <i
                   v-show="errors.has('name')"
-                  class="fa fa-warning text-danger input-icon"/>
+                  class="fa fa-warning text-danger input-icon"
+                />
                 <div
                   v-show="errors.has('name')"
-                  class="invalid-feedback text-left">
+                  class="invalid-feedback text-left"
+                >
                   {{ errors.first('name') }}
                 </div>
               </div>
@@ -63,18 +66,27 @@
                   name="email"
                   type="text"
                   class="form-control"
-                  placeholder="Email Address *">
+                  placeholder="Email Address *"
+                >
                 <i
                   v-show="errors.has('email')"
-                  class="fa fa-warning text-danger input-icon"/>
+                  class="fa fa-warning text-danger input-icon"
+                />
                 <div
                   v-show="errors.has('email')"
-                  class="invalid-feedback text-left">
+                  class="invalid-feedback text-left"
+                >
                   {{ errors.first('email') }}
                 </div>
               </div>
             </div>
           </div>
+          <input
+            type="text"
+            name="trapit"
+            value=""
+            style="display:none"
+          >
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -86,13 +98,16 @@
                   name="phone"
                   type="text"
                   class="form-control"
-                  placeholder="Phone Number">
+                  placeholder="Phone Number"
+                >
                 <i
                   v-show="errors.has('phone')"
-                  class="fa fa-warning text-danger input-icon"/>
+                  class="fa fa-warning text-danger input-icon"
+                />
                 <div
                   v-show="errors.has('phone')"
-                  class="invalid-feedback text-left">
+                  class="invalid-feedback text-left"
+                >
                   {{ errors.first('phone') }}
                 </div>
               </div>
@@ -100,21 +115,24 @@
             <div class="col-md-6">
               <div class="form-group">
                 <input
-                  v-validate="'url'"
-                  id="website"
-                  v-model="input.website"
-                  :class="{'is-invalid' : errors.has('website')}"
-                  name="website"
+                  v-validate="'required'"
+                  id="subject"
+                  v-model="input.subject"
+                  :class="{'is-invalid' : errors.has('subject')}"
+                  name="subject"
                   type="text"
                   class="form-control"
-                  placeholder="Website">
+                  placeholder="Subject"
+                >
                 <i
-                  v-show="errors.has('website')"
-                  class="fa fa-warning text-danger input-icon"/>
+                  v-show="errors.has('subject')"
+                  class="fa fa-warning text-danger input-icon"
+                />
                 <div
-                  v-show="errors.has('website')"
-                  class="invalid-feedback text-left">
-                  {{ errors.first('website') }}
+                  v-show="errors.has('subject')"
+                  class="invalid-feedback text-left"
+                >
+                  {{ errors.first('subject') }}
                 </div>
               </div>
             </div>
@@ -130,7 +148,8 @@
                   name="message"
                   class="form-control"
                   rows="5"
-                  placeholder="Tell me about your project... what is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"/>
+                  placeholder="Tell me about your project... what is it? Why are you doing it? What do you hope to accomplish? How can I help? Timeline and budget details are also appreciated. *"
+                />
                 <i
                   v-show="errors.has('message')"
                   class="fa fa-warning text-danger input-icon"/>
@@ -166,6 +185,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props: {
     contactShow: {
@@ -179,7 +200,7 @@ export default {
         name: "",
         email: "",
         phone: "",
-        website: "",
+        subject: "",
         message: ""
       }
     };
@@ -197,7 +218,7 @@ export default {
       this.input.name = "";
       this.input.email = "";
       this.input.phone = "";
-      this.input.website = "";
+      this.input.subject = "";
       this.input.message = "";
     },
     clearErrors() {
@@ -220,8 +241,16 @@ export default {
       });
     },
     handleSubmit() {
+      axios
+        .post("https://jumprock.co/mail/pktharindu", this.input)
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
       // Using smtpjs.com and elasticemail.com
-      window.Email.send(
+      /* window.Email.send(
         this.input.email,
         "pktharindu@outlook.com",
         "Message sent from pktharindu.github.io",
@@ -245,7 +274,7 @@ export default {
             });
           }
         }
-      );
+      ); */
     }
   }
 };
