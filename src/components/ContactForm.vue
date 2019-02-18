@@ -227,7 +227,7 @@ export default {
         "Message sent from pktharindu.github.io",
         JSON.stringify(this.input),
         {
-          token: "ddb60294-d122-46ba-a0a5-5981e4bcb407",
+          token: "10d460f7-baa9-41f0-a9ae-6de60662b743",
           callback: message => {
             console.log(message);
             if (message === "OK") {
