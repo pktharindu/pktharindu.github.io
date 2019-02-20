@@ -28,7 +28,16 @@
       <hr class="short primary">
       <p class="statement mb-4">After you introduce yourself and your project, I'll get in touch with you to schedule a time to chat. You should expect to hear from me in a day or so.</p>
 
-      <form @submit="handleOk">
+      <form
+        name="contact"
+        @submit="handleOk"
+      >
+        <input
+          v-model="input.trapit"
+          type="text"
+          name="trapit"
+          style="display:none"
+        >
         <div class="col-lg-10 mx-auto">
           <div class="row">
             <div class="col-md-6">
@@ -81,12 +90,6 @@
               </div>
             </div>
           </div>
-          <input
-            type="text"
-            name="trapit"
-            value=""
-            style="display:none"
-          >
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -115,7 +118,7 @@
             <div class="col-md-6">
               <div class="form-group">
                 <input
-                  v-validate="'required'"
+                  v-validate="''"
                   id="subject"
                   v-model="input.subject"
                   :class="{'is-invalid' : errors.has('subject')}"
@@ -197,6 +200,7 @@ export default {
   data() {
     return {
       input: {
+        trapit: "",
         name: "",
         email: "",
         phone: "",
@@ -215,6 +219,7 @@ export default {
       this.$emit("contactVisibility", false);
     },
     clearForm() {
+      this.input.trapit = "";
       this.input.name = "";
       this.input.email = "";
       this.input.phone = "";
@@ -241,40 +246,43 @@ export default {
       });
     },
     handleSubmit() {
+      let that = this;
       axios
-        .post("https://jumprock.co/mail/pktharindu", this.input)
-        .then(function(response) {
-          console.log(response);
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-      // Using smtpjs.com and elasticemail.com
-      /* window.Email.send(
-        this.input.email,
-        "pktharindu@outlook.com",
-        "Message sent from pktharindu.github.io",
-        JSON.stringify(this.input),
-        {
-          token: "10d460f7-baa9-41f0-a9ae-6de60662b743",
-          callback: message => {
-            console.log(message);
-            if (message === "OK") {
-              this.$notify({
-                type: "primary",
-                title: "Success!",
-                text: "Your massage has been sent. Thank you!"
-              });
-              return;
-            }
-            this.$notify({
-              type: "error",
-              title: "Oops!",
-              text: `Something went wrong on the server. If the problem persists, send me an e-mail <a href='mailto:pktharindu@outlook.com'>pktharindu@outlook.com</a>`
-            });
+        .post(
+          `https://jumprock.co/mail/pktharindu
+            ?name=${this.input.name}
+            &email=${this.input.email}
+            &phone=${this.input.phone}
+            &subject=${this.input.subject}
+            &message=${this.input.message}
+            &trapit=${this.input.trapit}`,
+          JSON.stringify(this.input),
+          {
+            crossdomain: true
           }
-        }
-      ); */
+        )
+        .then(function(response) {
+          if (response.data.status === "success") {
+            that.$notify({
+              type: "primary",
+              title: "Success!",
+              text: "Your massage has been sent. Thank you!"
+            });
+            return;
+          }
+          that.$notify({
+            type: "error",
+            title: "Oops!",
+            text: `Something went wrong. If the problem persists, send me an e-mail <a href='mailto:pktharindu@outlook.com'>pktharindu@outlook.com</a>`
+          });
+        })
+        .catch(function() {
+          that.$notify({
+            type: "error",
+            title: "Oops!",
+            text: `Something went wrong. If the problem persists, send me an e-mail <a href='mailto:pktharindu@outlook.com'>pktharindu@outlook.com</a>`
+          });
+        });
     }
   }
 };
